@@ -48,7 +48,12 @@ namespace csharp
                 {
                     System.Console.WriteLine(Items[j]);
                 }
-                Console.WriteLine("");
+
+                if (i < 30)
+                {
+                    Console.WriteLine("");
+                }
+
                 app.UpdateQuality();
             }
         }
