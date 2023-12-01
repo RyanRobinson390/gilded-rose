@@ -1,25 +1,18 @@
 ﻿<Project Sdk="Microsoft.NET.Sdk">
-  <PropertyGroup>
-    <TargetFramework>net6.0</TargetFramework>
-    <OutputType>Exe</OutputType>
-    <GenerateAssemblyInfo>false</GenerateAssemblyInfo>
-    <GenerateProgramFile>false</GenerateProgramFile>
-    <AssemblyTitle>csharp</AssemblyTitle>
-    <Product>csharp</Product>
-    <Copyright>Copyright ©  2017</Copyright>
-    <AssemblyVersion>1.0.0.0</AssemblyVersion>
-    <FileVersion>1.0.0.0</FileVersion>
-  </PropertyGroup>
-  <ItemGroup>
-    <Compile Remove="ApprovalTest.cs" />
-    <Compile Remove="GildedRoseTest.cs" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Remove="ApprovalTest.ThirtyDays.approved.txt" />
-  </ItemGroup>
+	<PropertyGroup>
+		<OutputType>Library</OutputType>
+		<TargetFramework>net6.0</TargetFramework>
+		<RootNamespace>Domain</RootNamespace>
+		<ImplicitUsings>enable</ImplicitUsings>
+		<Nullable>disable</Nullable>
+		<GenerateAssemblyInfo>false</GenerateAssemblyInfo>
+		<GenerateTargetFrameworkAttribute>false</GenerateTargetFrameworkAttribute>
+	</PropertyGroup>
+
   <ItemGroup>
     <Service Include="{82A7F48D-3B50-4B1E-B82E-3ADA8210C358}" />
   </ItemGroup>
+
   <ItemGroup>
     <PackageReference Include="ApprovalTests" Version="5.9.0" />
     <PackageReference Include="ApprovalUtilities" Version="5.9.0" />

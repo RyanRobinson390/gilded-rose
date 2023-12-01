@@ -1,22 +1,13 @@
 ﻿<Project Sdk="Microsoft.NET.Sdk">
   <PropertyGroup>
-    <TargetFramework>net6.0</TargetFramework>
-    <OutputType>Exe</OutputType>
-    <GenerateAssemblyInfo>false</GenerateAssemblyInfo>
-    <GenerateProgramFile>false</GenerateProgramFile>
-    <AssemblyTitle>csharp</AssemblyTitle>
-    <Product>csharp</Product>
-    <Copyright>Copyright ©  2017</Copyright>
-    <AssemblyVersion>1.0.0.0</AssemblyVersion>
-    <FileVersion>1.0.0.0</FileVersion>
+	  <TargetFramework>net6.0</TargetFramework>
+	  <ImplicitUsings>enable</ImplicitUsings>
+	  <RootNamespace>Tests</RootNamespace>
+	  <Nullable>disable</Nullable>
+	  <GenerateAssemblyInfo>false</GenerateAssemblyInfo>
+	  <GenerateTargetFrameworkAttribute>false</GenerateTargetFrameworkAttribute>
   </PropertyGroup>
-  <ItemGroup>
-    <Compile Remove="ApprovalTest.cs" />
-    <Compile Remove="GildedRoseTest.cs" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Remove="ApprovalTest.ThirtyDays.approved.txt" />
-  </ItemGroup>
+    
   <ItemGroup>
     <Service Include="{82A7F48D-3B50-4B1E-B82E-3ADA8210C358}" />
   </ItemGroup>
@@ -36,5 +27,8 @@
     <PackageReference Include="System.Management" Version="6.0.2" />
     <PackageReference Include="System.Runtime.CompilerServices.Unsafe" Version="6.0.0" />
     <PackageReference Include="System.Security.AccessControl" Version="6.0.0" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\src\Domain\Domain.csproj" />
   </ItemGroup>
 </Project>
