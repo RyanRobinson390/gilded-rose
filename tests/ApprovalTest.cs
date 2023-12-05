@@ -1,9 +1,7 @@
-﻿using System;
-using System.IO;
-using System.Text;
+﻿using System.Text;
 using ApprovalTests;
 using ApprovalTests.Reporters;
-using Microsoft.VisualStudio.TestPlatform.TestHost;
+using Domain.Runners;
 using NUnit.Framework;
 
 namespace Tests
@@ -12,15 +10,23 @@ namespace Tests
     [TestFixture]
     public class ApprovalTest
     {
+        private GildedRoseRunner _runner;
+
+        [SetUp]
+        public void SetUp()
+        {
+            _runner = new GildedRoseRunner();
+        }
+
         [Test]
         public void ThirtyDays()
         {
-            var fakeoutput = new StringBuilder();
-            Console.SetOut(new StringWriter(fakeoutput));
+            var applicationOutput = new StringBuilder();
+            Console.SetOut(new StringWriter(applicationOutput));
             Console.SetIn(new StringReader("a\n"));
 
-            Program.Main(new string[] { "30" });
-            var output = fakeoutput.ToString();
+            _runner.Run();
+            var output = applicationOutput.ToString();
 
             Approvals.Verify(output);
         }
