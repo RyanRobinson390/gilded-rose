@@ -18,24 +18,24 @@ namespace Domain.Runners
             _writer.WriteOutput("OMGHAI!");
 
             var items = _itemRepository.GetAllItems();
-            var app = new GildedRose(items);
+            var quality = new QualityControl(items);
 
-            for (var i = 0; i < 31; i++)
+            for (var day = 0; day < 31; day++)
             {
-                _writer.WriteOutput($"-------- day {i} --------");
+                _writer.WriteOutput($"-------- day {day} --------");
                 _writer.WriteOutput("name, sellIn, quality");
 
-                for (var j = 0; j < items.Count; j++)
+                foreach (var item in items)
                 {
-                    Console.WriteLine(items[j]);
+                    _writer.WriteOutput($"{item}");
                 }
 
-                if (i < 30)
+                if (day < 30)
                 {
                     _writer.WriteOutput("");
                 }
 
-                app.UpdateQuality();
+                quality.UpdateQuality();
             }
         }
     }

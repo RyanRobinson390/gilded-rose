@@ -5,7 +5,7 @@ using NUnit.Framework;
 namespace Tests
 {
     [TestFixture]
-    public class GildedRoseTest
+    public class QualityControlTest
     {
         [Test]
         public void BlankTest()
@@ -15,9 +15,9 @@ namespace Tests
                 new() { Name = "foo", SellIn = 0, Quality = 0 }
             };
              
-            var app = new GildedRose(items);
+            var app = new QualityControl(items);
 
-            app.UpdateQuality();
+            app.Update();
             Assert.AreEqual("foo", items[0].Name);
         }
     }

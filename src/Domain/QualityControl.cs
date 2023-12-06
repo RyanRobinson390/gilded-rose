@@ -1,15 +1,15 @@
 ﻿namespace Domain
 {
-    public class GildedRose
+    public class QualityControl
     {
         readonly IList<Item> _items;
 
-        public GildedRose(IList<Item> Items)
+        public QualityControl(IList<Item> Items)
         {
             _items = Items;
         }
 
-        public void UpdateQuality()
+        public void Update()
         {
             for (var i = 0; i < _items.Count; i++)
             {
