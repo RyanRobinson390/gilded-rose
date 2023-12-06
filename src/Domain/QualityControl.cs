@@ -23,39 +23,23 @@ namespace Domain
                 {
                     ((BackstageConcertTicket)item).UpdateQuality();
                 }
+                else if (item.Name == "+5 Dexterity Vest")
+                {
+                    ((DexterityVest)item).UpdateQuality();
+                }
+                else if (item.Name == "Elixir of the Mongoose")
+                {
+                    ((ElixirOfMongoose)item).UpdateQuality();
+                }
                 else
                 {
-                    //if (item.Quality < 50)
-                    //{
-                    //    item.Quality += 1;
-
-                    //    if (item.SellIn < 11)
-                    //    {
-                    //        if (item.Quality < 50)
-                    //        {
-                    //            item.Quality += 1;
-                    //        }
-                    //    }
-
-                    //    if (item.SellIn < 6)
-                    //    {
-                    //        if (item.Quality < 50)
-                    //        {
-                    //            item.Quality += 1;
-                    //        }
-                    //    }
-                    //}
-
-                    //else
-                    //{
-                        if (item.Quality > 0)
+                    if (item.Quality > 0)
+                    {
+                        if (item.Name != "Sulfuras, Hand of Ragnaros")
                         {
-                            if (item.Name != "Sulfuras, Hand of Ragnaros")
-                            {
-                                item.Quality -= 1;
-                            }
+                            item.Quality -= 1;
                         }
-                    //}
+                    }
 
                     if (item.Name != "Sulfuras, Hand of Ragnaros")
                     {
