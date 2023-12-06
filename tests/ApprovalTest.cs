@@ -1,6 +1,7 @@
 ﻿using System.Text;
 using ApprovalTests;
 using ApprovalTests.Reporters;
+using Data;
 using Domain.Runners;
 using NUnit.Framework;
 
@@ -15,7 +16,7 @@ namespace Tests
         [SetUp]
         public void SetUp()
         {
-            _runner = new GildedRoseRunner();
+            _runner = new GildedRoseRunner(new ItemRepository());
         }
 
         [Test]
