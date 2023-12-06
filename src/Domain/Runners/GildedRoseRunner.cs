@@ -18,7 +18,6 @@ namespace Domain.Runners
             _writer.WriteOutput("OMGHAI!");
 
             var items = _itemRepository.GetAllItems();
-            var quality = new QualityControl(items);
 
             for (var day = 0; day < 31; day++)
             {
@@ -35,7 +34,10 @@ namespace Domain.Runners
                     _writer.WriteOutput("");
                 }
 
-                quality.Update();
+                foreach (var item in items)
+                {
+                    item.UpdateQuality();
+                }
             }
         }
     }

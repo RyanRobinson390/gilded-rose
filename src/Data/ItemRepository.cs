@@ -7,7 +7,7 @@ namespace Data
     {
         public IList<SaleableItem> GetAllItems()
         {
-            List<SaleableItem> Items = new List<SaleableItem>
+            var items = new List<SaleableItem>
             {
                 new DexterityVest { Name = "+5 Dexterity Vest", SellIn = 10, Quality = 20 },
                 new AgedBrie { Name = "Aged Brie", SellIn = 2, Quality = 0 },
@@ -36,7 +36,7 @@ namespace Data
                 new ManaCake { Name = "Conjured Mana Cake", SellIn = 3, Quality = 6 }
             };
 
-            return Items;
+            return items;
         }
     }
 }
