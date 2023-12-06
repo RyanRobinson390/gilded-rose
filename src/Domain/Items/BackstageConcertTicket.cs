@@ -1,8 +1,8 @@
 ﻿namespace Domain.Items
 {
-    public class BackstageConcertTicket : Item
+    public class BackstageConcertTicket : SaleableItem
     {
-        public void UpdateQuality()
+        public override void UpdateQuality()
         {
             if (Quality < 50)
             {

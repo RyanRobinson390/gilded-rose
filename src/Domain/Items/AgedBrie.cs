@@ -1,8 +1,8 @@
 ﻿namespace Domain.Items
 {
-    public class AgedBrie : Item
+    public class AgedBrie : SaleableItem
     {
-        public void UpdateQuality()
+        public override void UpdateQuality()
         {
             if (Quality < 50)
             {

@@ -1,6 +1,6 @@
 ﻿namespace Domain.Items
 {
-    public class DexterityVest : SaleableItem
+    public class ManaCake : SaleableItem
     {
         public override void UpdateQuality()
         {

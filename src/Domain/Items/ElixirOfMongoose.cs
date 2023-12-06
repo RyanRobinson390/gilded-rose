@@ -1,8 +1,8 @@
 ﻿namespace Domain.Items
 {
-    public class ElixirOfMongoose :Item
+    public class ElixirOfMongoose : SaleableItem
     {
-        public void UpdateQuality()
+        public override void UpdateQuality()
         {
             if (Quality > 0)
             {
