@@ -15,23 +15,22 @@ namespace Domain.Runners
 
         public void Run()
         {
-            _writer.WriteOutput("OMGHAI!");
+            _writer.WriteLine("OMGHAI!");
 
             var items = _itemRepository.GetAllItems();
 
             for (var day = 0; day < 31; day++)
             {
-                _writer.WriteOutput($"-------- day {day} --------");
-                _writer.WriteOutput("name, sellIn, quality");
+                _writer.WriteNewDayHeader(day);
 
                 foreach (var item in items)
                 {
-                    _writer.WriteOutput($"{item}");
+                    _writer.WriteLine($"{item}");
                 }
 
                 if (day < 30)
                 {
-                    _writer.WriteOutput("");
+                    _writer.WriteLine("");
                 }
 
                 foreach (var item in items)

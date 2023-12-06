@@ -2,5 +2,6 @@
 
 public interface IWriteOutput
 {
-    void WriteOutput(string message);
+    void WriteLine(string message);
+    void WriteNewDayHeader(int day);
 }

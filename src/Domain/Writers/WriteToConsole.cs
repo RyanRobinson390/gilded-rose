@@ -4,9 +4,15 @@ namespace Domain.Writers
 {
     public class ConsoleWriter : IWriteOutput
     {
-        public void WriteOutput(string message)
+        public void WriteLine(string message)
         {
             Console.WriteLine(message);
+        }
+
+        public void WriteNewDayHeader(int day)
+        {
+            Console.WriteLine($"-------- day {day} --------");
+            Console.WriteLine("name, sellIn, quality");
         }
     }
 }
