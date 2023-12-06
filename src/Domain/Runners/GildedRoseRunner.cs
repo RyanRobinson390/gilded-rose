@@ -35,7 +35,7 @@ namespace Domain.Runners
                     _writer.WriteOutput("");
                 }
 
-                quality.UpdateQuality();
+                quality.Update();
             }
         }
     }
