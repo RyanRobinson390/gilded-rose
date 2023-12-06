@@ -2,7 +2,7 @@
 {
     public class GildedRose
     {
-        IList<Item> _items;
+        readonly IList<Item> _items;
 
         public GildedRose(IList<Item> Items)
         {

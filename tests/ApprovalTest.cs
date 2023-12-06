@@ -3,6 +3,7 @@ using ApprovalTests;
 using ApprovalTests.Reporters;
 using Data;
 using Domain.Runners;
+using Domain.Writers;
 using NUnit.Framework;
 
 namespace Tests
@@ -16,7 +17,7 @@ namespace Tests
         [SetUp]
         public void SetUp()
         {
-            _runner = new GildedRoseRunner(new ItemRepository());
+            _runner = new GildedRoseRunner(new ItemRepository(), new ConsoleWriter());
         }
 
         [Test]
