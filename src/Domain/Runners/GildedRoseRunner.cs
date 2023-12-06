@@ -28,10 +28,7 @@ namespace Domain.Runners
                     _writer.WriteLine($"{item}");
                 }
 
-                if (day < 30)
-                {
-                    _writer.WriteLine("");
-                }
+                _writer.WriteLine("");
 
                 foreach (var item in items)
                 {
