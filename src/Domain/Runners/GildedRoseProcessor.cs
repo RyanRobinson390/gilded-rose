@@ -2,12 +2,12 @@
 
 namespace Domain.Runners
 {
-    public class GildedRoseRunner
+    public class GildedRoseProcessor
     {
         private readonly IGetItemRepository _itemRepository;
         private readonly IWriteOutput _writer;
 
-        public GildedRoseRunner(IGetItemRepository itemRepository, IWriteOutput writer)
+        public GildedRoseProcessor(IGetItemRepository itemRepository, IWriteOutput writer)
         {
             _itemRepository = itemRepository;
             _writer = writer;

@@ -12,12 +12,12 @@ namespace Tests
     [TestFixture]
     public class ApprovalTest
     {
-        private GildedRoseRunner _runner;
+        private GildedRoseProcessor _processor;
 
         [SetUp]
         public void SetUp()
         {
-            _runner = new GildedRoseRunner(new ItemRepository(), new ConsoleWriter());
+            _processor = new GildedRoseProcessor(new ItemRepository(), new ConsoleWriter());
         }
 
         [Test]
@@ -27,7 +27,7 @@ namespace Tests
             Console.SetOut(new StringWriter(applicationOutput));
             Console.SetIn(new StringReader("a\n"));
 
-            _runner.Run();
+            _processor.Run();
             var output = applicationOutput.ToString();
 
             Approvals.Verify(output);
