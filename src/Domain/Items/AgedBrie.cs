@@ -4,19 +4,14 @@
     {
         public override void UpdateQuality()
         {
-            if (Quality < 50)
+            if (IsOutOfDate())
             {
-                Quality += 1;
+                IncreaseQuality();
+                IncreaseQuality();
             }
-
-            SellIn -= 1;
-
-            if (SellIn < 0)
+            else
             {
-                if (Quality < 50)
-                {
-                    Quality += 1;
-                }
+                IncreaseQuality();
             }
         }
     }

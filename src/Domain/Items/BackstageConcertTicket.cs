@@ -4,32 +4,28 @@
     {
         public override void UpdateQuality()
         {
-            if (Quality < 50)
+            if (IsOutOfDate())
             {
-                Quality += 1;
-
-                if (SellIn < 11)
-                {
-                    if (Quality < 50)
-                    {
-                        Quality += 1;
-                    }
-                }
-
-                if (SellIn < 6)
-                {
-                    if (Quality < 50)
-                    {
-                        Quality += 1;
-                    }
-                }
+                Quality = 0;
+                return;
             }
 
-            SellIn -= 1;
-
-            if (SellIn < 0)
+            switch (SellIn)
             {
-                Quality -= Quality;
+                case < 10 and >= 5:
+                    IncreaseQuality();
+                    IncreaseQuality();
+                    break;
+
+                case < 5:
+                    IncreaseQuality();
+                    IncreaseQuality();
+                    IncreaseQuality();
+                    break;
+
+                default:
+                    IncreaseQuality();
+                    break;
             }
         }
     }

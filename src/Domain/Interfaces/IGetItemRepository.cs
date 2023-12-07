@@ -4,6 +4,6 @@ namespace Domain.Interfaces
 {
     public interface IGetItemRepository
     {
-        IList<SaleableItem> GetAllItems();
+        IList<Item> GetAllItems();
     }
 }

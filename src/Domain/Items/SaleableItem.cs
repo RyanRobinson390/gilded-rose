@@ -2,22 +2,50 @@
 {
     public class SaleableItem : Item
     {
+        private const int MaxQuality = 50;
+        private const int MinQuality = 0;
+
+        public virtual void DecreaseSellInDateByOneDay()
+        {
+            SellIn -= 1;
+        }
+
         public virtual void UpdateQuality()
         {
-            if (Quality > 0)
+            if (IsOutOfDate())
             {
-                Quality -= 1;
+                DecreaseQuality();
+                DecreaseQuality();
+            }
+            else
+            {
+                DecreaseQuality();
+            }
+        }
+
+        protected bool IsOutOfDate()
+        {
+            return SellIn < 0;
+        }
+
+        protected void DecreaseQuality()
+        {
+            if (Quality <= MinQuality)
+            {
+                return;
             }
 
-            SellIn -= 1;
+            Quality -= 1;
+        }
 
-            if (SellIn < 0)
+        protected void IncreaseQuality()
+        {
+            if (Quality >= MaxQuality)
             {
-                if (Quality > 0)
-                {
-                    Quality -= 1;
-                }
+                return;
             }
+
+            Quality += 1;
         }
     }
 }

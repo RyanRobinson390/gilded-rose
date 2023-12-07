@@ -1,9 +1,6 @@
 ﻿namespace Domain.Items
 {
-    public class Sulfuras : SaleableItem
+    public class Sulfuras : LegendaryItem
     {
-        public override void UpdateQuality()
-        {
-        }
     }
 }

@@ -1,4 +1,5 @@
 ﻿using Domain.Interfaces;
+using Domain.Items;
 
 namespace Domain.Runners
 {
@@ -30,9 +31,12 @@ namespace Domain.Runners
 
                 _writer.WriteLine("");
 
-                foreach (var item in items)
+                var saleableItems = items.OfType<SaleableItem>();
+
+                foreach (var saleableItem in saleableItems)
                 {
-                    item.UpdateQuality();
+                    saleableItem.DecreaseSellInDateByOneDay();
+                    saleableItem.UpdateQuality();
                 }
             }
         }
