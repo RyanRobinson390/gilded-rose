@@ -2,6 +2,9 @@
 {
     public class BackstageConcertTicket : SaleableItem
     {
+        private const int TenDaysThreshold = 10;
+        private const int FiveDaysThreshold = 5;
+
         public override void UpdateQuality()
         {
             if (IsOutOfDate())
@@ -10,23 +13,32 @@
                 return;
             }
 
-            switch (SellIn)
+            if (IsTenDaysToConcert())
             {
-                case < 10 and >= 5:
-                    IncreaseQuality();
-                    IncreaseQuality();
-                    break;
-
-                case < 5:
-                    IncreaseQuality();
-                    IncreaseQuality();
-                    IncreaseQuality();
-                    break;
-
-                default:
-                    IncreaseQuality();
-                    break;
+                IncreaseQuality();
+                IncreaseQuality();
+                return;
             }
+
+            if (IsFiveDaysToConcert())
+            {
+                IncreaseQuality();
+                IncreaseQuality();
+                IncreaseQuality();
+                return;
+            }
+
+            IncreaseQuality();
+        }
+
+        private bool IsTenDaysToConcert()
+        {
+            return SellIn is < TenDaysThreshold and >= FiveDaysThreshold;
+        }
+
+        private bool IsFiveDaysToConcert()
+        {
+            return SellIn < FiveDaysThreshold;
         }
     }
 }
